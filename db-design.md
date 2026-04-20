@@ -11,16 +11,10 @@
 | `createdAt` | timestamp | アカウント作成日時 |
 | `updatedAt` | timestamp | アカウント更新日時 |
 
---- users/{userId}/followingサブコレクション
-
-| フィールド名 | 型 | 用途 |
-| `followedUserId` | string | フォロー先のuserId |
-| `createdAt` | timestamp | フォローした日時 |
-| `updatedAt` | timestamp | 更新日時 |
-
 --- users/{userId}/bookmarksサブコレクション
 
 | フィールド名 | 型 | 用途 |
+| `bookmarkId` | string | ブックマークのID |
 | `tweetId` | string | ブックマークしたツイートのID |
 | `createdAt` | timestamp | ブックマークした日時 |
 | `updatedAt` | timestamp | 更新日時 |
@@ -28,26 +22,29 @@
 --- users/{userId}/blocksサブコレクション
 
 | フィールド名 | 型 | 用途 |
+| `blockId` | string | ブロックID |
 | `blockedUserId` | string | ブロックしたユーザーのuserId |
 | `createdAt` | timestamp | ブロックした日時 |
-| `updatedAt` | timestamp | 更新日時 |
-
---- users/{userId}/subscriptionsサブコレクション
-
-| フィールド名 | 型 | 用途 |
-| `subscribedUserId` | string | 通知登録したユーザーのuserId |
-| `createdAt` | timestamp | 登録した日時 |
 | `updatedAt` | timestamp | 更新日時 |
 
 --- users/{userId}/notificationsサブコレクション
 
 | フィールド名 | 型 | 用途 |
 | `notificationId` | string | 通知ID |
-| `fromUserId` | string | 通知を発生させたユーザーのuserId |
-| `type` |　string　|　通知の種類（いいね、リプライ、リツイート、引用リツイート、フォロー、新規ツイート）|
+| `fromUserId` | string | 通知を送るユーザーのuserId |
+| `toUserId` | string | 通知が届くユーザーのuserId |
+| `type` |　string　|　通知の種類（いいね、リプライ、リツイート、引用リツイート、フォロー）|
 | `tweetId` | string? | 対象のツイートID（follow通知はnull） |
 | `isRead` | boolean | 通知の既読 |
 | `createdAt` | timestamp | 通知発生日時 |
+| `updatedAt` | timestamp | 更新日時 |
+                                            
+--- follows/{followId/コレクション
+
+| フィールド名 | 型 | 用途 |
+| `followingId` | string | フォローした人のuserId |
+| `followedId` | string | フォローされた人のuserId |
+| `createdAt` | timestamp | フォローした日時 |
 | `updatedAt` | timestamp | 更新日時 |
 
 
@@ -66,6 +63,7 @@
 --- tweets/{tweetId}/likesサブコレクション
 
 | フィールド名 | 型 | 用途 |
+| `likeId` | string | いいねのID |
 | `likedBy` | string | いいねしたユーザーのuserId |
 | `createdAt` | timestamp | いいねした日時 |
 | `updatedAt` | timestamp | 更新日時 |
@@ -94,4 +92,4 @@
   | `users/{userId}/notifications.tweetId` | `tweets.tweetId` |　通知対象ツイートの特定 |                                              
   | `users.photoUrl` | Firebase Storage | プロフィール画像の参照 |
   | `tweets.imageUrls` | Firebase Storage | ツイート画像の参照 |                   
-                                              
+  
