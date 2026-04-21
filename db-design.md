@@ -53,6 +53,7 @@
 | フィールド名 | 型 | 用途 |
 | `tweetId` | string | ツイートID |
 | `authorId` | string | 投稿者のuserId |
+| `type` | string | 種類（twwet/retweet/引用retweet/reply） |
 | `content` | string? | ツイート本文（通常リツイートのみnull） |
 | `imageUrls` | array? | 添付画像URLの一覧（最大４枚） |
 | `retweetOf` | string? | 元ツイートのtweetId（通常ツイート、リプライ時はnull） | 
