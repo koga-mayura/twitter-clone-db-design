@@ -19,14 +19,6 @@
 | `createdAt` | timestamp | ブックマークした日時 |
 | `updatedAt` | timestamp | 更新日時 |
 
---- users/{userId}/blocksサブコレクション
-
-| フィールド名 | 型 | 用途 |
-| `blockId` | string | ブロックID |
-| `blockedUserId` | string | ブロックしたユーザーのuserId |
-| `createdAt` | timestamp | ブロックした日時 |
-| `updatedAt` | timestamp | 更新日時 |
-
 --- users/{userId}/notificationsサブコレクション
 
 | フィールド名 | 型 | 用途 |
@@ -39,7 +31,7 @@
 | `createdAt` | timestamp | 通知発生日時 |
 | `updatedAt` | timestamp | 更新日時 |
                                             
---- follows/{followId/コレクション
+--- follows/{followId}/コレクション
 
 | フィールド名 | 型 | 用途 |
 | `followingId` | string | フォローした人のuserId |
@@ -47,6 +39,14 @@
 | `createdAt` | timestamp | フォローした日時 |
 | `updatedAt` | timestamp | 更新日時 |
 
+--- blocks/{blockId}/blocksコレクション
+
+| フィールド名 | 型 | 用途 |
+| `blockId` | string | ブロックID |
+| `blockerUserId` | string | ブロックしたユーザーのuserId |
+| `blockedUserId` | string | ブロックされたユーザーのuserId |
+| `createdAt` | timestamp | ブロックした日時 |
+| `updatedAt` | timestamp | 更新日時 |
 
 --- tweetsコレクション
 
