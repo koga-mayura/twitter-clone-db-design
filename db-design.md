@@ -9,6 +9,7 @@
 | `bio` | string? | 自己紹介 |
 | `photoUrl` | string? | プロフィール画像URL |
 | `headPhotoUrl` | string? | ヘッダー画像URL |
+| `isDeleted` | boolean | アカウントの状態 |
 | `createdAt` | timestamp | アカウント作成日時 |
 | `updatedAt` | timestamp | アカウント更新日時 |
 
