@@ -34,7 +34,7 @@
 | フィールド名 | 型 | 用途 |
 | `notificationId` | string | 通知ID |
 | `fromUserId` | string | 通知を送るユーザーのuserId |
-| `type` |　string　|　通知の種類（いいね、リプライ、リツイート、引用リツイート、フォロー）|
+| `type` |　string　|　通知の種類（いいね、リプライ、リツイート、引用リツイート、メンション、フォロー）|
 | `tweetId` | string? | 対象のツイートID（follow通知はnull） |
 | `isRead` | boolean | 通知の既読 |
 | `createdAt` | timestamp | 通知発生日時 |
