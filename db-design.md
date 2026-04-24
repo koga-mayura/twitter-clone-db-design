@@ -1,6 +1,6 @@
 # TwitterクローンDB設計書（Firestore + Storage）
 
-##--- usersコレクション
+##--- usersコレクション 
 
 | フィールド名 | 型 | 用途 |
 | `userId` | string | ユーザーID（Authのuidと同じ） |
