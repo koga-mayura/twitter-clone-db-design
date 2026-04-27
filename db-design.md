@@ -52,6 +52,7 @@
 | `retweetOf` | string? | 元ツイートのtweetId（通常ツイート、リプライ時はnull） |
 | `status` | string | ツイートの状態（published / draft / deleted） |
 | `likesCount` | number | いいね数 | 
+| `hashtags` | array? | ハッシュタグ | 
 | `createdAt` | timestamp | 投稿日時 |
 | `updatedAt` | timestamp | 更新日時 |
 
